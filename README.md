@@ -5,9 +5,11 @@
 
 > Ufacil is a demo app using AdonisJS Typescript and VueJS
 
-## 🎰 Backend - API
+## 🎰 Backend - API 
 
 Este es el repositorio del backend de la aplicación, el cual se encuentra desarrollado en AdonisJS con Typescript. Es parte de un proyecto de prueba t´ecnica para una empresa X.
+
+URL https://ufacil-api.gfarias.cl/
 
 ## 🎨 Frontend - Web
 
