@@ -39,7 +39,7 @@ export default class ConverterController {
     return { conversion }
   }
 
-  public async getHistory({ auth }) {
+  public async getHistory() {
     const conversions = await this.convertService.getHistory()
     return { conversions }
   }
