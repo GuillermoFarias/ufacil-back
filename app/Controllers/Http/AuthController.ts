@@ -9,7 +9,7 @@ export default class AuthController {
       expiresIn: '10 mins',
     })
 
-    return token.toJSON()
+    return { ...token.toJSON(), user: auth.user }
   }
 
   public async me({ auth }) {
