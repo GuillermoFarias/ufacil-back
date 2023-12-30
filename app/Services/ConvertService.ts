@@ -17,4 +17,8 @@ export default class ConvertService {
 
     return await conversion.save()
   }
+
+  public async getHistory() {
+    return await Conversion.query().preload('user')
+  }
 }

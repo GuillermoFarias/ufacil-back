@@ -34,5 +34,6 @@ Route.group(() => {
   Route.group(() => {
     Route.resource('users', 'UsersController').apiOnly()
     Route.post('converter', 'ConverterController.convert')
+    Route.get('history', 'ConverterController.getHistory')
   }).middleware('auth:api')
 }).prefix('api')

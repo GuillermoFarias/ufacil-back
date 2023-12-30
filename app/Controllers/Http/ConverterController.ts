@@ -38,4 +38,9 @@ export default class ConverterController {
 
     return { conversion }
   }
+
+  public async getHistory({ auth }) {
+    const conversions = await this.convertService.getHistory()
+    return { conversions }
+  }
 }
