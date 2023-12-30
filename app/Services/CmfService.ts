@@ -1,4 +1,5 @@
 import Env from '@ioc:Adonis/Core/Env'
+import fetch from 'node-fetch'
 import { DateTime } from 'luxon'
 import { CmfResponse } from 'Contracts/cmf'
 
