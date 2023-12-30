@@ -21,5 +21,17 @@
 import Route from '@ioc:Adonis/Core/Route'
 
 Route.get('/', async () => {
-  return { hello: 'world' }
+  return { hello: 'ufacil api by Guillermo Farías' }
 })
+
+Route.group(() => {
+  Route.group(() => {
+    Route.post('login', 'AuthController.login')
+    Route.post('logout', 'AuthController.logout')
+  }).prefix('auth')
+
+  Route.group(() => {
+    Route.resource('users', 'UsersController').apiOnly()
+    Route.post('converter', 'ConverterController.convert')
+  }).middleware('auth:api')
+}).prefix('api')
