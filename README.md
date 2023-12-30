@@ -6,45 +6,54 @@
 > Ufacil is a demo app using AdonisJS Typescript and VueJS
 
 ## Backend - API
+
 Este es el repositorio del backend de la aplicación, el cual se encuentra desarrollado en AdonisJS con Typescript. Es parte de un proyecto de prueba t´ecnica para una empresa X.
 
 ## Frontend - Web
-
 
 ## Instalación
 
 1. Las instrucciones están hechas para Mac OS, pero deberían funcionar en cualquier sistema operativo basado en Unix/Linux/Ubuntu.
 
-2. Se asume que ya se tiene instalado NodeJS y NPM.
+2. Se asume que ya se tiene instalado Git.
 
-3. Se asume que ya se tiene instalado Yarn.
-
-4. Se asume que ya se tiene instalado Git.
-
-5. Se asume que ya se tiene instalado Docker y Docker Compose.
+3. Se asume que ya se tiene instalado Docker y Docker Compose.
 
 ### Clonar el repositorio
+
 ```bash
 git clone git@github.com:GuillermoFarias/ufacil-back.git
 cd ufacil-back
 ```
 
-### Instalar dependencias
-```bash
-yarn install
-```
+## Configurar variables de entorno
 
-### Configurar variables de entorno
 ```bash
 cp .env.example .env
 ```
 
-### Levantar el servidor SQL
+> La aplicación servirá en el puerto definido en el archivo `.env` en la variable `PORT`.
+
+### Levantar app y base de datos
+
 ```bash
 docker-compose up -d
 ```
 
-### Ejecutar migraciones
+### Instalar dependencias
+
 ```bash
-node ace migration:run
+docker compose exec app yarn install
+```
+
+### Ejecutar migraciones
+
+```bash
+docker compose exec app node ace migration:fresh --seed
+```
+
+## Verificar que la aplicación esté corriendo
+
+```bash
+open http://localhost:3333
 ```
