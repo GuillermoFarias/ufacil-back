@@ -28,6 +28,7 @@ Route.group(() => {
   Route.group(() => {
     Route.post('login', 'AuthController.login')
     Route.post('logout', 'AuthController.logout')
+    Route.get('me', 'AuthController.me').middleware('auth:api')
   }).prefix('auth')
 
   Route.group(() => {
